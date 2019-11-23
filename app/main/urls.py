@@ -19,12 +19,12 @@ from rest_framework import routers
 from drf import views
 
 router = routers.DefaultRouter()
-router.register(r'users', drf_views.User_Viewset)
+router.register(r'users', views.User_Viewset)
 router.register(r'groups', views.Group_Viewset)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', inclue(router.urls)),
+    path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
 ]
